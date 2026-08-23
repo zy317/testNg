@@ -1,0 +1,32 @@
+# ---- Maven 构建产物 ----
+target/
+!.mvn/wrapper/maven-wrapper.jar
+.mvn/timing.properties
+dependency-reduced-pom.xml
+
+# ---- 测试报告 / 日志 ----
+test-output/
+allure-results/
+allure-report/
+logs/
+*.log
+
+# ---- IDE ----
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.classpath
+.project
+
+# ---- 操作系统 ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- 本地配置(含个人环境信息，不入库) ----
+.claude/settings.local.json
+src/main/resources/env.local.properties
+src/test/resources/env.local.properties
