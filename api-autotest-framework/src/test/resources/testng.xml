@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="API AutoTest Suite" parallel="classes" thread-count="5">
+
+    <!--
+        TestNG 套件配置说明:
+
+        parallel="classes": 以类为粒度并发执行
+        thread-count="5":   最大并发线程数
+
+        分组执行: 可通过 groups 控制执行哪些优先级的用例
+           mvn test -Pdev -Dgroups=P0   仅执行 P0
+           mvn test -Pdev -Dgroups=P0,P1 执行 P0+P1
+
+        若需控制单个类内方法的并发，改为 parallel="methods"
+    -->
+
+    <test name="API AutoTest - All" verbose="2">
+        <classes>
+            <class name="com.autotest.tests.ExampleTest" />
+            <!--
+                新增测试类在此注册:
+                <class name="com.autotest.tests.YourNewTest" />
+            -->
+        </classes>
+    </test>
+
+    <!--
+        ========== 按分组拆分的套件（可选） ==========
+        如需不同环境执行不同分组，可参考以下配置:
+    -->
+    <!--
+    <test name="P0 - 核心用例">
+        <groups>
+            <run>
+                <include name="P0"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.autotest.tests.ExampleTest"/>
+        </classes>
+    </test>
+
+    <test name="P1 - 扩展用例">
+        <groups>
+            <run>
+                <include name="P1"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.autotest.tests.ExampleTest"/>
+        </classes>
+    </test>
+    -->
+
+</suite>
