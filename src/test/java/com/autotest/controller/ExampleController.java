@@ -2,6 +2,7 @@ package com.autotest.controller;
 
 import com.autotest.http.ResponseMap;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.HeaderMap;
 import retrofit2.http.POST;
@@ -51,7 +52,7 @@ public class ExampleController extends BaseController {
      * @POST("path")         POST 请求
      * @QueryMap             URL 查询参数
      * @HeaderMap            请求头
-     * @retrofit2.http.Body  POST 请求体
+     * @Body                 POST 请求体
      */
     public interface ExampleApi {
 
@@ -61,7 +62,7 @@ public class ExampleController extends BaseController {
 
         /** 示例 POST 请求 */
         @POST("/api/example/create")
-        Call<String> createUser(@retrofit2.http.Body String body, @HeaderMap Map<String, String> headers);
+        Call<String> createUser(@Body String body, @HeaderMap Map<String, String> headers);
     }
 
     // ==================== 业务方法（对 Test 层开放） ====================
